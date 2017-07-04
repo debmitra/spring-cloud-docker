@@ -1,7 +1,7 @@
 discovery:
   image: spring-cloud/microservices-hospitalsystem-eureka-service
   ports:
-   - "8761:8761"
+   - "80:8761"
 doctor:
   image: spring-cloud/microservices-hospitalsystem-doctor-service
   ports:
