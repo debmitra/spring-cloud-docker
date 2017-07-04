@@ -2,14 +2,6 @@ discovery:
   image: spring-cloud/microservices-hospitalsystem-eureka-service
   ports:
    - "8761:8761"
-gateway:
-  image: spring-cloud/microservices-hospitalsystem-gateway
-  ports:
-   - "9023:9023"
-  links:
-   - discovery
-   - doctor
-   - patient
 doctor:
   image: spring-cloud/microservices-hospitalsystem-doctor-service
   ports:
@@ -22,3 +14,11 @@ patient:
      - "9903:9903"
   links:
    - discovery
+gateway:
+  image: spring-cloud/microservices-hospitalsystem-gateway
+  ports:
+   - "9023:9023"
+  links:
+   - discovery
+   - doctor
+   - patient

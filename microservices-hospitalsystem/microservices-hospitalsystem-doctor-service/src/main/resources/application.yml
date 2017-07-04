@@ -1,6 +1,6 @@
 
 server:
-  port: ${PORT:9033}
+  port: 9033
 
 spring:
   jpa:
@@ -10,12 +10,15 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+      defaultZone: http://discovery:8761/eureka/
 
 ---
 spring:
   profiles: cloud
 eureka:
   instance:
-    hostname: ${APPLICATION_DOMAIN}
+    hostname: doctor
     nonSecurePort: 80
+ribbon: 
+   eureka: 
+     enabled: true
