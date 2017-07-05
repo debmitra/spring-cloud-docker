@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient("patient-service")
+@FeignClient("patient")
 public interface PatientClient {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/{registrationId}/patients")
